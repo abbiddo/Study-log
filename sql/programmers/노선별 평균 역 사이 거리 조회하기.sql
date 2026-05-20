@@ -1,0 +1,7 @@
+-- 예제는 통과 후 테스트는 실패 했었음
+-- 이유: T로 정렬을 했어서 숫자가 아닌 문자열로 정렬
+
+SELECT ROUTE, CONCAT(ROUND(SUM(D_BETWEEN_DIST), 1), "km") T, CONCAT(ROUND(AVG(D_BETWEEN_DIST), 2), "km") A
+FROM SUBWAY_DISTANCE
+GROUP BY ROUTE
+ORDER BY SUM(D_BETWEEN_DIST) DESC
